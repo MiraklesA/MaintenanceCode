@@ -1,4 +1,7 @@
-#Script that autoupdates Adobe Pro/Reader & Creative Cloud Products
+<#
+Script that autoupdates Adobe Pro/Reader & Creative Cloud Products
+You require a copy of the Adobe Remote Update Manager in order to automatically update files, this script creates a schedueled task that forces this process and saves it under ProgramData
+#>
 
 
 $DownloadURL = "" #<----------- Insert download URL for Adobe RUM https://helpx.adobe.com/au/enterprise/using/using-remote-update-manager.html
