@@ -1,5 +1,5 @@
 
-# Creating the Scheduled Task 
+# Creating the Scheduled Task - Basic Script that creates a schedueled task that auto updates visual studio
 #-------------------------------------------------------------------------------------------------------
 
 if (Get-ScheduledTask VSCodeITG -ea SilentlyContinue)
