@@ -8,7 +8,7 @@ if (Get-ScheduledTask VSCodeITG -ea SilentlyContinue)
   exit
 }
 
-if (!(Get-ScheduledTask VSCodeITG -ea SilentlyContinue)){
+if (!(Get-ScheduledTask VSCodeEdit -ea SilentlyContinue)){
 
   $action = New-ScheduledTaskAction -Execute '"C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe"' `
   -Argument 'updateall --quiet'
@@ -16,7 +16,7 @@ if (!(Get-ScheduledTask VSCodeITG -ea SilentlyContinue)){
   $settings = New-ScheduledTaskSettingsSet -RunOnlyIfNetworkAvailable -WakeToRun  -StartWhenAvailable 
   $principal = New-ScheduledTaskPrincipal -UserId 'nt authority\system' -RunLevel Highest
   $task = New-ScheduledTask -Action $action -Principal $principal -Trigger $trigger -Settings $settings
-  Register-ScheduledTask 'VSCodeITG' -InputObject $task
+  Register-ScheduledTask 'VSCodeEdit' -InputObject $task
   Write-Host "Job Completed"
   exit
 }
